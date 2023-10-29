@@ -6,9 +6,9 @@ import {
     RESTPostAPIContextMenuApplicationCommandsJSONBody,
 } from 'discord.js';
 
-import { Args } from './index.js';
-import { Language } from '../models/enum-helpers/index.js';
-import { Lang } from '../services/index.js';
+import { Args } from './args.js';
+import { Language } from '../models/enum-helpers/language.js';
+import { Lang } from '../services/lang.js';
 
 export const ChatCommandMetadata: {
     [command: string]: RESTPostAPIChatInputApplicationCommandsJSONBody;
@@ -44,30 +44,6 @@ export const ChatCommandMetadata: {
                 required: true,
             },
         ],
-    },
-    INFO: {
-        type: ApplicationCommandType.ChatInput,
-        name: Lang.getRef('chatCommands.info', Language.Default),
-        name_localizations: Lang.getRefLocalizationMap('chatCommands.info'),
-        description: Lang.getRef('commandDescs.info', Language.Default),
-        description_localizations: Lang.getRefLocalizationMap('commandDescs.info'),
-        dm_permission: true,
-        default_member_permissions: undefined,
-        options: [
-            {
-                ...Args.INFO_OPTION,
-                required: true,
-            },
-        ],
-    },
-    TEST: {
-        type: ApplicationCommandType.ChatInput,
-        name: Lang.getRef('chatCommands.test', Language.Default),
-        name_localizations: Lang.getRefLocalizationMap('chatCommands.test'),
-        description: Lang.getRef('commandDescs.test', Language.Default),
-        description_localizations: Lang.getRefLocalizationMap('commandDescs.test'),
-        dm_permission: true,
-        default_member_permissions: undefined,
     },
 };
 

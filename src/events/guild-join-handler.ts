@@ -1,10 +1,14 @@
 import { Guild } from 'discord.js';
 import { createRequire } from 'node:module';
 
-import { EventHandler } from './index.js';
-import { Language } from '../models/enum-helpers/index.js';
-import { EventDataService, Lang, Logger } from '../services/index.js';
-import { ClientUtils, FormatUtils, MessageUtils } from '../utils/index.js';
+import { EventHandler } from './event-handler.js';
+import { Language } from '../models/enum-helpers/language.js';
+import { EventDataService } from '../services/event-data-service.js';
+import { Lang } from '../services/lang.js';
+import { Logger } from '../services/logger.js';
+import { ClientUtils } from '../utils/client-utils.js';
+import { FormatUtils } from '../utils/format-utils.js';
+import { MessageUtils } from '../utils/message-utils.js';
 
 const require = createRequire(import.meta.url);
 let Logs = require('../../lang/logs.json');

@@ -1,6 +1,6 @@
 import { fetchRecommendedShardCount, ShardClientUtil, ShardingManager } from 'discord.js';
 
-import { MathUtils } from './index.js';
+import { MathUtils } from './math-utils.js';
 import { DiscordLimits } from '../constants/index.js';
 
 export class ShardUtils {

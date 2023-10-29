@@ -9,12 +9,15 @@ import {
 import { RateLimiter } from 'discord.js-rate-limiter';
 import { createRequire } from 'node:module';
 
-import { EventHandler } from './index.js';
-import { Command, CommandDeferType } from '../commands/index.js';
+import { EventHandler } from './event-handler.js';
+import { Command, CommandDeferType } from '../commands/command.js';
 import { DiscordLimits } from '../constants/index.js';
 import { EventData } from '../models/internal-models.js';
-import { EventDataService, Lang, Logger } from '../services/index.js';
-import { CommandUtils, InteractionUtils } from '../utils/index.js';
+import { EventDataService } from '../services/event-data-service.js';
+import { Lang } from '../services/lang.js';
+import { Logger } from '../services/logger.js';
+import { CommandUtils } from '../utils/command-utils.js';
+import { InteractionUtils } from '../utils/interaction-utils.js';
 
 const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
@@ -26,7 +29,10 @@ export class CommandHandler implements EventHandler {
         Config.rateLimiting.commands.interval * 1000
     );
 
-    constructor(public commands: Command[], private eventDataService: EventDataService) {}
+    constructor(
+        public commands: Command[],
+        private eventDataService: EventDataService
+    ) {}
 
     public async process(intr: CommandInteraction | AutocompleteInteraction): Promise<void> {
         // Don't respond to self, or other bots

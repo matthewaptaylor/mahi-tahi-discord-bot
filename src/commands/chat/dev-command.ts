@@ -3,16 +3,21 @@ import { createRequire } from 'node:module';
 import os from 'node:os';
 import typescript from 'typescript';
 
-import { DevCommandName } from '../../enums/index.js';
-import { Language } from '../../models/enum-helpers/index.js';
+import { Language } from '../../models/enum-helpers/language.js';
 import { EventData } from '../../models/internal-models.js';
-import { Lang } from '../../services/index.js';
-import { FormatUtils, InteractionUtils, ShardUtils } from '../../utils/index.js';
-import { Command, CommandDeferType } from '../index.js';
+import { Lang } from '../../services/lang.js';
+import { FormatUtils } from '../../utils/format-utils.js';
+import { InteractionUtils } from '../../utils/interaction-utils.js';
+import { ShardUtils } from '../../utils/shard-utils.js';
+import { Command, CommandDeferType } from '../command.js';
 
 const require = createRequire(import.meta.url);
 let Config = require('../../../config/config.json');
 let TsConfig = require('../../../tsconfig.json');
+
+export enum DevCommandName {
+    INFO = 'INFO',
+}
 
 export class DevCommand implements Command {
     public names = [Lang.getRef('chatCommands.dev', Language.Default)];

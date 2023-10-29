@@ -2,10 +2,10 @@ import { ButtonInteraction } from 'discord.js';
 import { RateLimiter } from 'discord.js-rate-limiter';
 import { createRequire } from 'node:module';
 
-import { EventHandler } from './index.js';
+import { EventHandler } from './event-handler.js';
 import { Button, ButtonDeferType } from '../buttons/index.js';
-import { EventDataService } from '../services/index.js';
-import { InteractionUtils } from '../utils/index.js';
+import { EventDataService } from '../services/event-data-service.js';
+import { InteractionUtils } from '../utils/interaction-utils.js';
 
 const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
@@ -16,7 +16,10 @@ export class ButtonHandler implements EventHandler {
         Config.rateLimiting.buttons.interval * 1000
     );
 
-    constructor(private buttons: Button[], private eventDataService: EventDataService) {}
+    constructor(
+        private buttons: Button[],
+        private eventDataService: EventDataService
+    ) {}
 
     public async process(intr: ButtonInteraction): Promise<void> {
         // Don't respond to self, or other bots

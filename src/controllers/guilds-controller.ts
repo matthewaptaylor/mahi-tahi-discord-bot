@@ -3,8 +3,8 @@ import { Request, Response, Router } from 'express';
 import router from 'express-promise-router';
 import { createRequire } from 'node:module';
 
-import { Controller } from './index.js';
-import { GetGuildsResponse } from '../models/cluster-api/index.js';
+import { Controller } from './controller.js';
+import { GetGuildsResponse } from '../models/cluster-api/guilds.js';
 
 const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');

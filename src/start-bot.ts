@@ -3,34 +3,31 @@ import { Options, Partials } from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { Button } from './buttons/index.js';
-import { DevCommand, HelpCommand, InfoCommand, TestCommand } from './commands/chat/index.js';
+import { DevCommand } from './commands/chat/dev-command.js';
+import { HelpCommand } from './commands/chat/help-command.js';
+import { Command } from './commands/command.js';
+import { ViewDateSent } from './commands/message/view-date-sent.js';
 import {
     ChatCommandMetadata,
-    Command,
     MessageCommandMetadata,
     UserCommandMetadata,
-} from './commands/index.js';
-import { ViewDateSent } from './commands/message/index.js';
-import { ViewDateJoined } from './commands/user/index.js';
-import {
-    ButtonHandler,
-    CommandHandler,
-    GuildJoinHandler,
-    GuildLeaveHandler,
-    MessageHandler,
-    ReactionHandler,
-    TriggerHandler,
-} from './events/index.js';
-import { CustomClient } from './extensions/index.js';
-import { Job } from './jobs/index.js';
+} from './commands/metadata.js';
+import { ViewDateJoined } from './commands/user/view-date-joined.js';
+import { ButtonHandler } from './events/button-handler.js';
+import { CommandHandler } from './events/command-handler.js';
+import { GuildJoinHandler } from './events/guild-join-handler.js';
+import { GuildLeaveHandler } from './events/guild-leave-handler.js';
+import { MessageHandler } from './events/message-handler.js';
+import { ReactionHandler } from './events/reaction-handler.js';
+import { TriggerHandler } from './events/trigger-handler.js';
+import { CustomClient } from './extensions/custom-client.js';
+import { Job } from './jobs/job.js';
 import { Bot } from './models/bot.js';
 import { Reaction } from './reactions/index.js';
-import {
-    CommandRegistrationService,
-    EventDataService,
-    JobService,
-    Logger,
-} from './services/index.js';
+import { CommandRegistrationService } from './services/command-registration-service.js';
+import { EventDataService } from './services/event-data-service.js';
+import { JobService } from './services/job-service.js';
+import { Logger } from './services/logger.js';
 import { Trigger } from './triggers/index.js';
 
 const require = createRequire(import.meta.url);
@@ -58,13 +55,11 @@ async function start(): Promise<void> {
         // Chat Commands
         new DevCommand(),
         new HelpCommand(),
-        new InfoCommand(),
-        new TestCommand(),
 
-        // Message Context Commands
+        // Message context menu commands
         new ViewDateSent(),
 
-        // User Context Commands
+        // User context menu commands
         new ViewDateJoined(),
 
         // TODO: Add new commands here
