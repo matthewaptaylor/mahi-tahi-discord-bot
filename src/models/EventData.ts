@@ -1,7 +1,7 @@
 import { Locale } from 'discord.js';
 
 // This class is used to store and pass data along in events
-export class EventData {
+export default class EventData {
     // TODO: Add any data you want to store
     constructor(
         // Event language

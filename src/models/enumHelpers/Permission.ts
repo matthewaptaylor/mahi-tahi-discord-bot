@@ -6,7 +6,7 @@ interface PermissionData {
     displayName(langCode: Locale): string;
 }
 
-export class Permission {
+export default class Permission {
     public static Data: {
         [key in PermissionsString]: PermissionData;
     } = {

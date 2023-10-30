@@ -6,8 +6,8 @@ import {
     User,
 } from 'discord.js';
 
-import { Language } from '../models/enum-helpers/language.js';
-import { EventData } from '../models/internal-models.js';
+import Language from '../models/enumHelpers/Language.js';
+import EventData from '../models/EventData.js';
 
 /**
  * Service for retrieving data to pass along in events.

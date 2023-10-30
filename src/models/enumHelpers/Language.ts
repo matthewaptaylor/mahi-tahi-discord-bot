@@ -5,7 +5,7 @@ interface LanguageData {
     nativeName: string;
 }
 
-export class Language {
+export default class Language {
     public static Default = Locale.EnglishGB;
     public static Enabled: Locale[] = [Locale.EnglishGB];
 

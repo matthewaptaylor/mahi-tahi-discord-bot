@@ -9,8 +9,8 @@ import {
 import { FormatUtils } from './format-utils.js';
 import { InteractionUtils } from './interaction-utils.js';
 import Command from '../commands/Command.js';
-import { Permission } from '../models/enum-helpers/permission.js';
-import { EventData } from '../models/internal-models.js';
+import Permission from '../models/enumHelpers/Permission.js';
+import EventData from '../models/EventData.js';
 import Lang from '../services/Lang.js';
 
 export class CommandUtils {

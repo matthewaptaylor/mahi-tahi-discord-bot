@@ -12,7 +12,7 @@ import { createRequire } from 'node:module';
 import EventHandler from './EventHandler.js';
 import Command, { CommandDeferType } from '../commands/Command.js';
 import DiscordLimits from '../constants/DiscordLimits.js';
-import { EventData } from '../models/internal-models.js';
+import EventData from '../models/EventData.js';
 import EventDataService from '../services/EventDataService.js';
 import Lang from '../services/Lang.js';
 import Logger from '../services/Logger.js';

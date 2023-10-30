@@ -3,8 +3,8 @@ import { createRequire } from 'node:module';
 import os from 'node:os';
 import typescript from 'typescript';
 
-import { Language } from '../../models/enum-helpers/language.js';
-import { EventData } from '../../models/internal-models.js';
+import Language from '../../models/enumHelpers/Language.js';
+import EventData from '../../models/EventData.js';
 import Lang from '../../services/Lang.js';
 import { FormatUtils } from '../../utils/format-utils.js';
 import { InteractionUtils } from '../../utils/interaction-utils.js';

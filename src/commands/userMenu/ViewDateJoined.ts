@@ -2,8 +2,8 @@ import { DMChannel, PermissionsString, UserContextMenuCommandInteraction } from 
 import { RateLimiter } from 'discord.js-rate-limiter';
 import { DateTime } from 'luxon';
 
-import { Language } from '../../models/enum-helpers/language.js';
-import { EventData } from '../../models/internal-models.js';
+import Language from '../../models/enumHelpers/Language.js';
+import EventData from '../../models/EventData.js';
 import Lang from '../../services/Lang.js';
 import { InteractionUtils } from '../../utils/interaction-utils.js';
 import Command, { CommandDeferType } from '../Command.js';

@@ -31,7 +31,7 @@ let Config = require('../../config/config.json');
 let Debug = require('../../config/debug.json');
 let Logs = require('../../lang/logs.json');
 
-export class Bot {
+export default class Bot {
     private ready = false;
 
     constructor(

@@ -19,4 +19,4 @@ RUN npm run build
 EXPOSE 3001
 
 # Run the application
-CMD [ "node", "dist/StartBot.js" ]
+CMD [ "node", "dist/start.js" ]

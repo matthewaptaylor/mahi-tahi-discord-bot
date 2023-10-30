@@ -2,7 +2,7 @@ import { REST } from '@discordjs/rest';
 import { Options, Partials } from 'discord.js';
 import { createRequire } from 'node:module';
 
-import { Button } from './buttons/index.js';
+import Button from './buttons/Button.js';
 import DevCommand from './commands/chat/DevCommand.js';
 import HelpCommand from './commands/chat/HelpCommand.js';
 import Command from './commands/Command.js';
@@ -18,7 +18,7 @@ import ReactionHandler from './events/ReactionHandler.js';
 import TriggerHandler from './events/TriggerHandler.js';
 import CustomClient from './extensions/CustomClient.js';
 import Job from './jobs/Job.js';
-import { Bot } from './models/bot.js';
+import Bot from './models/Bot.js';
 import Reaction from './reactions/Reaction.js';
 import CommandRegistrationService from './services/CommandRegistrationService.js';
 import EventDataService from './services/EventDataService.js';

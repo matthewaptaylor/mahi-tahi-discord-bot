@@ -9,7 +9,7 @@
             "preLaunchTask": "build",
             "cwd": "${workspaceFolder}",
             "runtimeExecutable": "node",
-            "args": ["--enable-source-maps", "${workspaceFolder}/dist/start-bot.js"],
+            "args": ["--enable-source-maps", "${workspaceFolder}/dist/start.js"],
             "resolveSourceMapLocations": ["${workspaceFolder}/**", "!**/node_modules/**"],
             "outputCapture": "std",
             "internalConsoleOptions": "openOnSessionStart",
@@ -26,7 +26,7 @@
             "runtimeExecutable": "node",
             "args": [
                 "--enable-source-maps",
-                "${workspaceFolder}/dist/start-bot.js",
+                "${workspaceFolder}/dist/start.js",
                 "commands",
                 "view"
             ],
@@ -46,7 +46,7 @@
             "runtimeExecutable": "node",
             "args": [
                 "--enable-source-maps",
-                "${workspaceFolder}/dist/start-bot.js",
+                "${workspaceFolder}/dist/start.js",
                 "commands",
                 "register"
             ],
@@ -66,7 +66,7 @@
             "runtimeExecutable": "node",
             "args": [
                 "--enable-source-maps",
-                "${workspaceFolder}/dist/start-bot.js",
+                "${workspaceFolder}/dist/start.js",
                 "commands",
                 "rename",
                 "old_name",
@@ -88,7 +88,7 @@
             "runtimeExecutable": "node",
             "args": [
                 "--enable-source-maps",
-                "${workspaceFolder}/dist/start-bot.js",
+                "${workspaceFolder}/dist/start.js",
                 "commands",
                 "delete",
                 "command_name"
@@ -109,7 +109,7 @@
             "runtimeExecutable": "node",
             "args": [
                 "--enable-source-maps",
-                "${workspaceFolder}/dist/start-bot.js",
+                "${workspaceFolder}/dist/start.js",
                 "commands",
                 "clear"
             ],

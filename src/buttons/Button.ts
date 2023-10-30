@@ -1,8 +1,11 @@
 import { ButtonInteraction } from 'discord.js';
 
-import { EventData } from '../models/internal-models.js';
+import EventData from '../models/EventData.js';
 
-export interface Button {
+/**
+ * A button that can be clicked by a user.
+ */
+export default interface Button {
     ids: string[];
     deferType: ButtonDeferType;
     requireGuild: boolean;

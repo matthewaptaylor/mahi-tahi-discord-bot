@@ -1,6 +1,6 @@
 import { Message } from 'discord.js';
 
-import { EventData } from '../models/internal-models.js';
+import EventData from '../models/EventData.js';
 
 /**
  * Interface for a trigger, which is a class that handles a specific type of message.

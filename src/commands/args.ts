@@ -2,7 +2,7 @@ import { APIApplicationCommandBasicOption, ApplicationCommandOptionType } from '
 
 import { DevCommandName } from './chat/DevCommand.js';
 import { HelpOption } from './chat/HelpCommand.js';
-import { Language } from '../models/enum-helpers/language.js';
+import Language from '../models/enumHelpers/Language.js';
 import Lang from '../services/Lang.js';
 
 /**

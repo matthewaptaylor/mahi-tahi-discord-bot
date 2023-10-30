@@ -1,8 +1,8 @@
 {
     "apps": [
         {
-            "name": "my-bot",
-            "script": "dist/start-bot.js",
+            "name": "Mahi Tahi Bot",
+            "script": "dist/start.js",
             "node_args": ["--enable-source-maps"],
             "restart_delay": 10000
         }
