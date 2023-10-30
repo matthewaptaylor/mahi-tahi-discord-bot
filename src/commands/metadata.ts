@@ -30,6 +30,7 @@ export const ChatCommandMetadata: {
             },
         ],
     },
+
     HELP: {
         type: ApplicationCommandType.ChatInput,
         name: Lang.getRef('chatCommands.help', Language.Default),

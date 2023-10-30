@@ -6,7 +6,6 @@ import { GuildsController } from './controllers/guilds-controller.js';
 import { RootController } from './controllers/root-controller.js';
 import { ShardsController } from './controllers/shards-controller.js';
 import { Job } from './jobs/job.js';
-import { UpdateServerCountJob } from './jobs/update-server-count-job.js';
 import { Api } from './models/api.js';
 import { Manager } from './models/manager.js';
 import { HttpService } from './services/http-service.js';
@@ -67,10 +66,7 @@ async function start(): Promise<void> {
     });
 
     // Jobs
-    let jobs: Job[] = [
-        Config.clustering.enabled ? undefined : new UpdateServerCountJob(shardManager, httpService),
-        // TODO: Add new jobs here
-    ].filter(Boolean);
+    let jobs: Job[] = [].filter(Boolean);
 
     let manager = new Manager(shardManager, new JobService(jobs));
 

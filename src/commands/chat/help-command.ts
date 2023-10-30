@@ -9,7 +9,6 @@ import { InteractionUtils } from '../../utils/interaction-utils.js';
 import { Command, CommandDeferType } from '../command.js';
 
 export enum HelpOption {
-    CONTACT_SUPPORT = 'CONTACT_SUPPORT',
     COMMANDS = 'COMMANDS',
 }
 
@@ -26,22 +25,12 @@ export class HelpCommand implements Command {
 
         let embed: EmbedBuilder;
         switch (args.option) {
-            case HelpOption.CONTACT_SUPPORT: {
-                embed = Lang.getEmbed('displayEmbeds.helpContactSupport', data.lang);
-                break;
-            }
             case HelpOption.COMMANDS: {
                 embed = Lang.getEmbed('displayEmbeds.helpCommands', data.lang, {
-                    CMD_LINK_TEST: FormatUtils.commandMention(
-                        await ClientUtils.findAppCommand(
-                            intr.client,
-                            Lang.getRef('chatCommands.test', Language.Default)
-                        )
-                    ),
                     CMD_LINK_INFO: FormatUtils.commandMention(
                         await ClientUtils.findAppCommand(
                             intr.client,
-                            Lang.getRef('chatCommands.info', Language.Default)
+                            Lang.getRef('chatCommands.help', Language.Default)
                         )
                     ),
                 });

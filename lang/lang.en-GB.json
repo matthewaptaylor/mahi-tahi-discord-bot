@@ -8,22 +8,6 @@
                     {
                         "name": "Important {{REF:fields.commands}}",
                         "value": ["{{CMD_LINK_HELP}} - {{REF:commandDescs.help}}"]
-                    },
-                    {
-                        "name": "{{REF:fields.links}}",
-                        "value": ["{{REF:links.docsEmbed}}", "{{REF:links.supportEmbed}}"]
-                    }
-                ]
-            },
-            "helpContactSupport": {
-                "title": "Help - {{REF:helpOptions.contactSupport}}",
-                "description": [
-                    "Have a question or feedback? Join our support server at the link below!"
-                ],
-                "fields": [
-                    {
-                        "name": "{{REF:fields.links}}",
-                        "value": ["{{REF:links.supportEmbed}}"]
                     }
                 ]
             },
@@ -35,19 +19,8 @@
                         "value": [
                             "To see the available commands, just type `/` and select the bot from the left side. You can then scroll through all available commands. Some commands may be hidden if you don't have permission to view them.",
                             "",
-                            "{{CMD_LINK_TEST}} - {{REF:commandDescs.test}}",
-                            "{{CMD_LINK_INFO}} - {{REF:commandDescs.info}}"
+                            "{{CMD_LINK_HELP}} - {{REF:commandDescs.test}}"
                         ]
-                    },
-                    {
-                        "name": "Command Permissions",
-                        "value": [
-                            "Want to restrict commands to certain roles, users, or channels? Set up permissions in the bot's integration page by going to **Server Settings** > **Integrations**, and then **Manage** for this bot."
-                        ]
-                    },
-                    {
-                        "name": "{{REF:fields.links}}",
-                        "value": ["{{REF:links.docsEmbed}}", "{{REF:links.supportEmbed}}"]
                     }
                 ]
             },
@@ -64,25 +37,9 @@
                     { "name": "Author", "value": "{{REF:links.authorEmbed}}" },
                     {
                         "name": "{{REF:fields.links}}",
-                        "value": [
-                            "{{REF:links.sourceEmbed}}",
-                            "{{REF:links.docsEmbed}}",
-                            "{{REF:links.termsEmbed}}",
-                            "{{REF:links.voteEmbed}}",
-                            "{{REF:links.donateEmbed}}",
-                            "{{REF:links.supportEmbed}}",
-                            "{{REF:links.inviteEmbed}}"
-                        ]
-                    },
-                    {
-                        "name": "Created With",
-                        "value": ["{{REF:links.templateEmbed}}"]
+                        "value": ["{{REF:links.sourceEmbed}}", "{{REF:links.inviteEmbed}}"]
                     }
                 ]
-            },
-            "translate": {
-                "title": "{{COM:bot.name}} - Translations",
-                "description": "Thank you to our translators who have made it possible for {{COM:bot.name}} to be used in the following languages. If you are interested in providing a translation, please contact the staff in our [support server]({{COM:links.support}})."
             },
             "devInfo": {
                 "title": "{{COM:bot.name}} - Developer Info",
@@ -157,10 +114,6 @@
                     {
                         "name": "Shard ID",
                         "value": "{{SHARD_ID}}"
-                    },
-                    {
-                        "name": "Contact support",
-                        "value": "{{COM:links.support}}"
                     }
                 ],
                 "color": "{{COM:colors.error}}"
@@ -183,7 +136,7 @@
             "translators": "[TranslatorName#1234](https://github.com/)"
         },
         "bot": {
-            "description": "{{REF:links.templateEmbed}} helps give developers a starting point for new Discord bots, so that much of the initial setup can be avoided and developers can instead focus on meaningful bot features."
+            "description": "A Discord bot which interacts with Scouts Aotearoa's online system."
         },
         "chatCommands": {
             "dev": "dev",
@@ -201,7 +154,7 @@
         },
         "commandDescs": {
             "dev": "Developer use only.",
-            "help": "Find help or contact support."
+            "help": "Find help."
         },
         "argDescs": {
             "devCommand": "Command.",
@@ -263,12 +216,10 @@
             "info": "info"
         },
         "helpOptions": {
-            "contactSupport": "Contact Support",
             "commands": "Commands"
         },
         "helpOptionDescs": {
-            "contactSupport": "❓ {{REF:helpOptions.contactSupport}} ❓",
-            "commands": "{{REF:helpOptions.commands}} -- What commands are there? How do I restrict who is allowed to use commands?"
+            "commands": "{{REF:helpOptions.commands}} -- What commands are there?"
         },
         "yesNo": {
             "yes": "Yes",
@@ -283,14 +234,8 @@
         },
         "links": {
             "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
-            "docsEmbed": "[View Documentation]({{COM:links.docs}})",
-            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
             "inviteEmbed": "[Invite {{COM:bot.name}} to a Server!]({{COM:links.invite}})",
-            "sourceEmbed": "[View Source Code]({{COM:links.source}})",
-            "supportEmbed": "[Join Support Server]({{COM:links.support}})",
-            "templateEmbed": "[Discord Bot TypeScript Template]({{COM:links.template}})",
-            "termsEmbed": "[View Terms of Service]({{COM:links.terms}})",
-            "voteEmbed": "[Vote for {{COM:bot.name}}!]({{COM:links.vote}})"
+            "sourceEmbed": "[View Source Code]({{COM:links.source}})"
         }
     }
 }

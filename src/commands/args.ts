@@ -5,6 +5,9 @@ import { HelpOption } from './chat/help-command.js';
 import { Language } from '../models/enum-helpers/language.js';
 import { Lang } from '../services/lang.js';
 
+/**
+ *
+ */
 export class Args {
     public static readonly DEV_COMMAND: APIApplicationCommandBasicOption = {
         name: Lang.getRef('arguments.command', Language.Default),
@@ -20,6 +23,7 @@ export class Args {
             },
         ],
     };
+
     public static readonly HELP_OPTION: APIApplicationCommandBasicOption = {
         name: Lang.getRef('arguments.option', Language.Default),
         name_localizations: Lang.getRefLocalizationMap('arguments.option'),
@@ -27,11 +31,6 @@ export class Args {
         description_localizations: Lang.getRefLocalizationMap('argDescs.helpOption'),
         type: ApplicationCommandOptionType.String,
         choices: [
-            {
-                name: Lang.getRef('helpOptionDescs.contactSupport', Language.Default),
-                name_localizations: Lang.getRefLocalizationMap('helpOptionDescs.contactSupport'),
-                value: HelpOption.CONTACT_SUPPORT,
-            },
             {
                 name: Lang.getRef('helpOptionDescs.commands', Language.Default),
                 name_localizations: Lang.getRefLocalizationMap('helpOptionDescs.commands'),
