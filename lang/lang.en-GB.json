@@ -1,46 +1,6 @@
 {
     "data": {
         "displayEmbeds": {
-            "welcome": {
-                "title": "Thank you for using {{COM:bot.name}}!",
-                "description": ["{{REF:bot.description}}"],
-                "fields": [
-                    {
-                        "name": "Important {{REF:fields.commands}}",
-                        "value": ["{{CMD_LINK_HELP}} - {{REF:commandDescs.help}}"]
-                    }
-                ]
-            },
-            "helpCommands": {
-                "title": "Help - {{REF:helpOptions.commands}}",
-                "fields": [
-                    {
-                        "name": "Commands",
-                        "value": [
-                            "To see the available commands, just type `/` and select the bot from the left side. You can then scroll through all available commands. Some commands may be hidden if you don't have permission to view them.",
-                            "",
-                            "{{CMD_LINK_HELP}} - {{REF:commandDescs.test}}"
-                        ]
-                    }
-                ]
-            },
-            "viewDateJoined": {
-                "description": "{{TARGET}} joined on {{DATE}}!"
-            },
-            "viewDateSent": {
-                "description": "This message was sent on {{DATE}}!"
-            },
-            "about": {
-                "title": "{{COM:bot.name}} - About",
-                "description": "{{REF:bot.description}}",
-                "fields": [
-                    { "name": "Author", "value": "{{REF:links.authorEmbed}}" },
-                    {
-                        "name": "{{REF:fields.links}}",
-                        "value": ["{{REF:links.sourceEmbed}}", "{{REF:links.inviteEmbed}}"]
-                    }
-                ]
-            },
             "devInfo": {
                 "title": "{{COM:bot.name}} - Developer Info",
                 "fields": [
@@ -79,6 +39,30 @@
                         ]
                     }
                 ]
+            },
+            "helpCommands": {
+                "title": "Help - {{REF:helpOptions.commands}}",
+                "fields": [
+                    {
+                        "name": "Commands",
+                        "value": [
+                            "To see the available commands, just type `/` and select the bot from the left side. You can then scroll through all available commands. Some commands may be hidden if you don't have permission to view them.",
+                            "",
+                            "{{CMD_LINK_HELP}} - {{REF:commandDescs.help}}"
+                        ]
+                    }
+                ]
+            },
+            "about": {
+                "title": "{{COM:bot.name}} - About",
+                "description": "{{REF:bot.description}}",
+                "fields": [{ "name": "Author", "value": "{{REF:links.authorEmbed}}" }]
+            },
+            "viewDateJoined": {
+                "description": "{{TARGET}} joined on {{DATE}}!"
+            },
+            "viewDateSent": {
+                "description": "This message was sent on {{DATE}}!"
             }
         },
         "validationEmbeds": {
@@ -132,15 +116,32 @@
         }
     },
     "refs": {
-        "meta": {
-            "translators": "[TranslatorName#1234](https://github.com/)"
-        },
         "bot": {
             "description": "A Discord bot which interacts with Scouts Aotearoa's online system."
         },
+
         "chatCommands": {
             "dev": "dev",
             "help": "help"
+        },
+        "commandDescs": {
+            "help": "Find help.",
+            "dev": "Developer use only."
+        },
+        "arguments": {
+            "helpOption": "option",
+            "devOption": "option"
+        },
+        "argDescs": {
+            "helpOption": "Option.",
+            "devOption": "Command."
+        },
+        "helpOption": {
+            "commands": "Commands -- What commands are there?",
+            "about": "About -- Tell me about this bot."
+        },
+        "devOption": {
+            "info": "Info -- Get info about the server environment."
         },
         "userCommands": {
             "viewDateJoined": "View Date Joined"
@@ -148,21 +149,21 @@
         "messageCommands": {
             "viewDateSent": "View Date Sent"
         },
-        "arguments": {
-            "command": "command",
-            "option": "option"
+
+        "yesNo": {
+            "yes": "Yes",
+            "no": "No"
         },
-        "commandDescs": {
-            "dev": "Developer use only.",
-            "help": "Find help."
+        "boolean": {
+            "true": "True",
+            "false": "False"
         },
-        "argDescs": {
-            "devCommand": "Command.",
-            "helpOption": "Option."
+        "other": {
+            "na": "N/A"
         },
-        "fields": {
-            "commands": "Commands",
-            "links": "Links"
+        "links": {
+            "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
+            "sourceEmbed": "[View Source Code]({{COM:links.source}})"
         },
         "permissions": {
             "AddReactions": "Add Reactions",
@@ -211,31 +212,6 @@
             "ViewChannel": "View Channel(s)",
             "ViewCreatorMonetizationAnalytics": "View Server Subscription Insights",
             "ViewGuildInsights": "View Server Insights"
-        },
-        "devCommandNames": {
-            "info": "info"
-        },
-        "helpOptions": {
-            "commands": "Commands"
-        },
-        "helpOptionDescs": {
-            "commands": "{{REF:helpOptions.commands}} -- What commands are there?"
-        },
-        "yesNo": {
-            "yes": "Yes",
-            "no": "No"
-        },
-        "boolean": {
-            "true": "True",
-            "false": "False"
-        },
-        "other": {
-            "na": "N/A"
-        },
-        "links": {
-            "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
-            "inviteEmbed": "[Invite {{COM:bot.name}} to a Server!]({{COM:links.invite}})",
-            "sourceEmbed": "[View Source Code]({{COM:links.source}})"
         }
     }
 }

@@ -10,6 +10,9 @@ import { Args } from './args.js';
 import { Language } from '../models/enum-helpers/language.js';
 import { Lang } from '../services/lang.js';
 
+/**
+ * Slash command declarations.
+ */
 export const ChatCommandMetadata: {
     [command: string]: RESTPostAPIChatInputApplicationCommandsJSONBody;
 } = {
@@ -25,7 +28,7 @@ export const ChatCommandMetadata: {
         ]).toString(),
         options: [
             {
-                ...Args.DEV_COMMAND,
+                ...Args.DEV_OPTION,
                 required: true,
             },
         ],

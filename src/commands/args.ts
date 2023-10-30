@@ -6,35 +6,46 @@ import { Language } from '../models/enum-helpers/language.js';
 import { Lang } from '../services/lang.js';
 
 /**
- *
+ * Slash command argument declarations.
  */
 export class Args {
-    public static readonly DEV_COMMAND: APIApplicationCommandBasicOption = {
-        name: Lang.getRef('arguments.command', Language.Default),
-        name_localizations: Lang.getRefLocalizationMap('arguments.command'),
-        description: Lang.getRef('argDescs.devCommand', Language.Default),
-        description_localizations: Lang.getRefLocalizationMap('argDescs.devCommand'),
+    /**
+     * Option argument for the dev command.
+     */
+    public static readonly DEV_OPTION: APIApplicationCommandBasicOption = {
+        name: Lang.getRef('arguments.devOption', Language.Default),
+        name_localizations: Lang.getRefLocalizationMap('arguments.devOption'),
+        description: Lang.getRef('argDescs.devOption', Language.Default),
+        description_localizations: Lang.getRefLocalizationMap('argDescs.devOption'),
         type: ApplicationCommandOptionType.String,
         choices: [
             {
-                name: Lang.getRef('devCommandNames.info', Language.Default),
-                name_localizations: Lang.getRefLocalizationMap('devCommandNames.info'),
+                name: Lang.getRef('devOption.info', Language.Default),
+                name_localizations: Lang.getRefLocalizationMap('devOption.info'),
                 value: DevCommandName.INFO,
             },
         ],
     };
 
+    /**
+     * Option argument for the help command.
+     */
     public static readonly HELP_OPTION: APIApplicationCommandBasicOption = {
-        name: Lang.getRef('arguments.option', Language.Default),
-        name_localizations: Lang.getRefLocalizationMap('arguments.option'),
+        name: Lang.getRef('arguments.helpOption', Language.Default),
+        name_localizations: Lang.getRefLocalizationMap('arguments.helpOption'),
         description: Lang.getRef('argDescs.helpOption', Language.Default),
         description_localizations: Lang.getRefLocalizationMap('argDescs.helpOption'),
         type: ApplicationCommandOptionType.String,
         choices: [
             {
-                name: Lang.getRef('helpOptionDescs.commands', Language.Default),
-                name_localizations: Lang.getRefLocalizationMap('helpOptionDescs.commands'),
+                name: Lang.getRef('helpOption.commands', Language.Default),
+                name_localizations: Lang.getRefLocalizationMap('helpOption.commands'),
                 value: HelpOption.COMMANDS,
+            },
+            {
+                name: Lang.getRef('helpOption.about', Language.Default),
+                name_localizations: Lang.getRefLocalizationMap('helpOption.about'),
+                value: HelpOption.ABOUT,
             },
         ],
     };

@@ -10,6 +10,7 @@ import { Command, CommandDeferType } from '../command.js';
 
 export enum HelpOption {
     COMMANDS = 'COMMANDS',
+    ABOUT = 'ABOUT',
 }
 
 export class HelpCommand implements Command {
@@ -19,7 +20,7 @@ export class HelpCommand implements Command {
     public async execute(intr: ChatInputCommandInteraction, data: EventData): Promise<void> {
         let args = {
             option: intr.options.getString(
-                Lang.getRef('arguments.option', Language.Default)
+                Lang.getRef('arguments.helpOption', Language.Default)
             ) as HelpOption,
         };
 
@@ -27,13 +28,17 @@ export class HelpCommand implements Command {
         switch (args.option) {
             case HelpOption.COMMANDS: {
                 embed = Lang.getEmbed('displayEmbeds.helpCommands', data.lang, {
-                    CMD_LINK_INFO: FormatUtils.commandMention(
+                    CMD_LINK_HELP: FormatUtils.commandMention(
                         await ClientUtils.findAppCommand(
                             intr.client,
                             Lang.getRef('chatCommands.help', Language.Default)
                         )
                     ),
                 });
+                break;
+            }
+            case HelpOption.ABOUT: {
+                embed = Lang.getEmbed('displayEmbeds.about', data.lang);
                 break;
             }
             default: {

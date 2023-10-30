@@ -31,7 +31,7 @@ export class DevCommand implements Command {
 
         let args = {
             command: intr.options.getString(
-                Lang.getRef('arguments.command', Language.Default)
+                Lang.getRef('arguments.devOption', Language.Default)
             ) as DevCommandName,
         };
 
