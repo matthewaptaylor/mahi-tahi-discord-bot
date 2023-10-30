@@ -8,7 +8,6 @@ import { EventData } from '../../models/internal-models.js';
 import Lang from '../../services/Lang.js';
 import { FormatUtils } from '../../utils/format-utils.js';
 import { InteractionUtils } from '../../utils/interaction-utils.js';
-import { ShardUtils } from '../../utils/shard-utils.js';
 import Command, { CommandDeferType } from '../Command.js';
 
 const require = createRequire(import.meta.url);
@@ -42,25 +41,7 @@ export default class DevCommand implements Command {
         switch (args.option) {
             case DevCommandName.INFO: {
                 // Option argument is info, show info about the server environment
-                let shardCount = intr.client.shard?.count ?? 1;
-                let serverCount: number;
-                if (intr.client.shard) {
-                    try {
-                        serverCount = await ShardUtils.serverCount(intr.client.shard);
-                    } catch (error) {
-                        if (error.name.includes('ShardingInProcess')) {
-                            await InteractionUtils.send(
-                                intr,
-                                Lang.getEmbed('errorEmbeds.startupInProcess', data.lang)
-                            );
-                            return;
-                        } else {
-                            throw error;
-                        }
-                    }
-                } else {
-                    serverCount = intr.client.guilds.cache.size;
-                }
+                let serverCount = intr.client.guilds.cache.size;
 
                 let memory = process.memoryUsage();
 
@@ -71,11 +52,7 @@ export default class DevCommand implements Command {
                         TS_VERSION: `v${typescript.version}`,
                         ES_VERSION: TsConfig.compilerOptions.target,
                         DJS_VERSION: `v${djs.version}`,
-                        SHARD_COUNT: shardCount.toLocaleString(data.lang),
                         SERVER_COUNT: serverCount.toLocaleString(data.lang),
-                        SERVER_COUNT_PER_SHARD: Math.round(serverCount / shardCount).toLocaleString(
-                            data.lang
-                        ),
                         RSS_SIZE: FormatUtils.fileSize(memory.rss),
                         RSS_SIZE_PER_SERVER:
                             serverCount > 0

@@ -5,6 +5,9 @@ import { fileURLToPath } from 'node:url';
 
 import { Language } from '../models/enum-helpers/language.js';
 
+/**
+ * Service for retrieving localized strings.
+ */
 export default class Lang {
     private static linguini = new Linguini(
         path.resolve(dirname(fileURLToPath(import.meta.url)), '../../lang'),

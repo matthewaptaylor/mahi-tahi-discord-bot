@@ -10,8 +10,7 @@
     },
     "type": "module",
     "exports": [
-        "./dist/start-bot.js",
-        "./dist/start-manager.js"
+        "./dist/start-bot.js"
     ],
     "scripts": {
         "lint": "eslint . --cache --ext .js,.jsx,.ts,.tsx",
@@ -28,7 +27,6 @@
         "commands:clear": "npm run build && node --enable-source-maps dist/start-bot.js commands clear",
         "start": "npm run start:bot",
         "start:bot": "npm run build && node --enable-source-maps dist/start-bot.js",
-        "start:manager": "npm run build && node --enable-source-maps dist/start-manager.js",
         "start:pm2": "npm run build && npm run pm2:start",
         "pm2:start": "pm2 start process.json",
         "pm2:stop": "pm2 stop process.json",

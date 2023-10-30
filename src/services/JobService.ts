@@ -9,6 +9,9 @@ import Job from '../jobs/Job.js';
 const require = createRequire(import.meta.url);
 let Logs = require('../../lang/logs.json');
 
+/**
+ * Service for running scheduled jobs.
+ */
 export default class JobService {
     constructor(private jobs: Job[]) {}
 
