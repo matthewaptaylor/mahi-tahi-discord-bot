@@ -3,9 +3,9 @@ import { ChatInputCommandInteraction, EmbedBuilder, PermissionsString } from 'di
 import Language from '../../models/enumHelpers/Language.js';
 import EventData from '../../models/EventData.js';
 import Lang from '../../services/Lang.js';
-import { ClientUtils } from '../../utils/client-utils.js';
-import { FormatUtils } from '../../utils/format-utils.js';
-import { InteractionUtils } from '../../utils/interaction-utils.js';
+import ClientUtils from '../../utils/ClientUtils.js';
+import FormatUtils from '../../utils/FormatUtils.js';
+import InteractionUtils from '../../utils/InteractionUtils.js';
 import Command, { CommandDeferType } from '../Command.js';
 
 export enum HelpOption {

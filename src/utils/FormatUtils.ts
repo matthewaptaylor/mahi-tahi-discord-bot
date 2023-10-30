@@ -2,7 +2,7 @@ import { ApplicationCommand, Guild, Locale } from 'discord.js';
 import { filesize } from 'filesize';
 import { Duration } from 'luxon';
 
-export class FormatUtils {
+export default class FormatUtils {
     public static roleMention(guild: Guild, discordId: string): string {
         if (discordId === '@here') {
             return discordId;

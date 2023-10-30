@@ -11,7 +11,7 @@ const IGNORED_ERRORS = [
     DiscordApiErrors.MaximumActiveThreads,
 ];
 
-export class ThreadUtils {
+export default class ThreadUtils {
     public static async archive(
         thread: ThreadChannel,
         archived: boolean = true

@@ -1,7 +1,7 @@
 import { escapeMarkdown } from 'discord.js';
 import removeMarkdown from 'remove-markdown';
 
-export class StringUtils {
+export default class StringUtils {
     public static truncate(input: string, length: number, addEllipsis: boolean = false): string {
         if (input.length <= length) {
             return input;

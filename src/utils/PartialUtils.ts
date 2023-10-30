@@ -18,7 +18,7 @@ const IGNORED_ERRORS = [
     DiscordApiErrors.MissingAccess,
 ];
 
-export class PartialUtils {
+export default class PartialUtils {
     public static async fillUser(user: User | PartialUser): Promise<User> {
         if (user.partial) {
             try {

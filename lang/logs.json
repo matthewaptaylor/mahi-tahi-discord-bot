@@ -19,9 +19,6 @@
         "guildJoined": "Guild '{GUILD_NAME}' ({GUILD_ID}) joined.",
         "guildLeft": "Guild '{GUILD_NAME}' ({GUILD_ID}) left."
     },
-    "warn": {
-        "managerNoShards": "No shards to spawn."
-    },
     "error": {
         "unspecified": "An unspecified error occurred.",
         "unhandledRejection": "An unhandled promise rejection occurred.",

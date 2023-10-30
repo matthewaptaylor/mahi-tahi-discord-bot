@@ -6,14 +6,14 @@ import {
     ThreadChannel,
 } from 'discord.js';
 
-import { FormatUtils } from './format-utils.js';
-import { InteractionUtils } from './interaction-utils.js';
+import FormatUtils from './FormatUtils.js';
+import InteractionUtils from './InteractionUtils.js';
 import Command from '../commands/Command.js';
 import Permission from '../models/enumHelpers/Permission.js';
 import EventData from '../models/EventData.js';
 import Lang from '../services/Lang.js';
 
-export class CommandUtils {
+export default class CommandUtils {
     public static findCommand(commands: Command[], commandParts: string[]): Command {
         let found = [...commands];
         let closestMatch: Command;

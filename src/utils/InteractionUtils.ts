@@ -25,7 +25,7 @@ const IGNORED_ERRORS = [
     DiscordApiErrors.MaximumActiveThreads,
 ];
 
-export class InteractionUtils {
+export default class InteractionUtils {
     public static async deferReply(
         intr: CommandInteraction | MessageComponentInteraction | ModalSubmitInteraction,
         hidden: boolean = false

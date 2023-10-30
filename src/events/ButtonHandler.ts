@@ -5,7 +5,7 @@ import { createRequire } from 'node:module';
 import EventHandler from './EventHandler.js';
 import Button, { ButtonDeferType } from '../buttons/Button.js';
 import EventDataService from '../services/EventDataService.js';
-import { InteractionUtils } from '../utils/interaction-utils.js';
+import InteractionUtils from '../utils/InteractionUtils.js';
 
 const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');

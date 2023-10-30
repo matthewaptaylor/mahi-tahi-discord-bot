@@ -16,8 +16,8 @@ import EventData from '../models/EventData.js';
 import EventDataService from '../services/EventDataService.js';
 import Lang from '../services/Lang.js';
 import Logger from '../services/Logger.js';
-import { CommandUtils } from '../utils/command-utils.js';
-import { InteractionUtils } from '../utils/interaction-utils.js';
+import CommandUtils from '../utils/CommandUtils.js';
+import InteractionUtils from '../utils/InteractionUtils.js';
 
 const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');

@@ -1,4 +1,4 @@
-export class RegexUtils {
+export default class RegexUtils {
     public static regex(input: string): RegExp {
         let match = input.match(/^\/(.*)\/([^/]*)$/);
         if (!match) {

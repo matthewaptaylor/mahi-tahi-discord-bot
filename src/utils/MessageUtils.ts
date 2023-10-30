@@ -24,7 +24,7 @@ const IGNORED_ERRORS = [
     DiscordApiErrors.MaximumActiveThreads,
 ];
 
-export class MessageUtils {
+export default class MessageUtils {
     public static async send(
         target: User | TextBasedChannel,
         content: string | EmbedBuilder | BaseMessageOptions

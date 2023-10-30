@@ -24,7 +24,7 @@ import MessageHandler from '../events/MessageHandler.js';
 import ReactionHandler from '../events/ReactionHandler.js';
 import JobService from '../services/JobService.js';
 import Logger from '../services/Logger.js';
-import { PartialUtils } from '../utils/partial-utils.js';
+import PartialUtils from '../utils/PartialUtils.js';
 
 const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');

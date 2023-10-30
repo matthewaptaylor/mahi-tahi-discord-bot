@@ -6,8 +6,8 @@ import typescript from 'typescript';
 import Language from '../../models/enumHelpers/Language.js';
 import EventData from '../../models/EventData.js';
 import Lang from '../../services/Lang.js';
-import { FormatUtils } from '../../utils/format-utils.js';
-import { InteractionUtils } from '../../utils/interaction-utils.js';
+import FormatUtils from '../../utils/FormatUtils.js';
+import InteractionUtils from '../../utils/InteractionUtils.js';
 import Command, { CommandDeferType } from '../Command.js';
 
 const require = createRequire(import.meta.url);

@@ -15,8 +15,8 @@ import {
     VoiceChannel,
 } from 'discord.js';
 
-import { PermissionUtils } from './permission-utils.js';
-import { RegexUtils } from './regex-utils.js';
+import PermissionUtils from './PermissionUtils.js';
+import RegexUtils from './RegexUtils.js';
 import Lang from '../services/Lang.js';
 
 const FETCH_MEMBER_LIMIT = 20;
@@ -30,7 +30,7 @@ const IGNORED_ERRORS = [
     DiscordApiErrors.MissingAccess,
 ];
 
-export class ClientUtils {
+export default class ClientUtils {
     public static async getGuild(client: Client, discordId: string): Promise<Guild> {
         discordId = RegexUtils.discordId(discordId);
         if (!discordId) {

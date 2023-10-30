@@ -1,6 +1,6 @@
 import { Channel, DMChannel, GuildChannel, PermissionFlagsBits, ThreadChannel } from 'discord.js';
 
-export class PermissionUtils {
+export default class PermissionUtils {
     public static canSend(channel: Channel, embedLinks: boolean = false): boolean {
         if (channel instanceof DMChannel) {
             return true;
