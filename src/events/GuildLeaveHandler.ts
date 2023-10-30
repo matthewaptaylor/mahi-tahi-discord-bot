@@ -1,13 +1,16 @@
 import { Guild } from 'discord.js';
 import { createRequire } from 'node:module';
 
-import { EventHandler } from './event-handler.js';
+import EventHandler from './EventHandler.js';
 import { Logger } from '../services/logger.js';
 
 const require = createRequire(import.meta.url);
 let Logs = require('../../lang/logs.json');
 
-export class GuildLeaveHandler implements EventHandler {
+/**
+ * Handle server leave events.
+ */
+export default class GuildLeaveHandler implements EventHandler {
     public async process(guild: Guild): Promise<void> {
         Logger.info(
             Logs.info.guildLeft

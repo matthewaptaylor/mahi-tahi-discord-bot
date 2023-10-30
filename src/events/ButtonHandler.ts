@@ -2,7 +2,7 @@ import { ButtonInteraction } from 'discord.js';
 import { RateLimiter } from 'discord.js-rate-limiter';
 import { createRequire } from 'node:module';
 
-import { EventHandler } from './event-handler.js';
+import EventHandler from './EventHandler.js';
 import { Button, ButtonDeferType } from '../buttons/index.js';
 import { EventDataService } from '../services/event-data-service.js';
 import { InteractionUtils } from '../utils/interaction-utils.js';
@@ -10,7 +10,10 @@ import { InteractionUtils } from '../utils/interaction-utils.js';
 const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 
-export class ButtonHandler implements EventHandler {
+/**
+ * Handle button interactions.
+ */
+export default class ButtonHandler implements EventHandler {
     private rateLimiter = new RateLimiter(
         Config.rateLimiting.buttons.amount,
         Config.rateLimiting.buttons.interval * 1000

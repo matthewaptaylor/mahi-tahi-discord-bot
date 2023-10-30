@@ -9,7 +9,7 @@ import {
 import { RateLimiter } from 'discord.js-rate-limiter';
 import { createRequire } from 'node:module';
 
-import { EventHandler } from './event-handler.js';
+import EventHandler from './EventHandler.js';
 import Command, { CommandDeferType } from '../commands/Command.js';
 import DiscordLimits from '../constants/DiscordLimits.js';
 import { EventData } from '../models/internal-models.js';
@@ -23,7 +23,10 @@ const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 let Logs = require('../../lang/logs.json');
 
-export class CommandHandler implements EventHandler {
+/**
+ * Handle command interactions.
+ */
+export default class CommandHandler implements EventHandler {
     private rateLimiter = new RateLimiter(
         Config.rateLimiting.commands.amount,
         Config.rateLimiting.commands.interval * 1000

@@ -1,9 +1,12 @@
 import { Message } from 'discord.js';
 
-import { EventHandler } from './event-handler.js';
-import { TriggerHandler } from './trigger-handler.js';
+import EventHandler from './EventHandler.js';
+import TriggerHandler from './TriggerHandler.js';
 
-export class MessageHandler implements EventHandler {
+/**
+ * Handle message events.
+ */
+export default class MessageHandler implements EventHandler {
     constructor(private triggerHandler: TriggerHandler) {}
 
     public async process(msg: Message): Promise<void> {

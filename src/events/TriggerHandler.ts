@@ -8,7 +8,10 @@ import { Trigger } from '../triggers/index.js';
 const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 
-export class TriggerHandler {
+/**
+ * Handle message events.
+ */
+export default class TriggerHandler {
     private rateLimiter = new RateLimiter(
         Config.rateLimiting.triggers.amount,
         Config.rateLimiting.triggers.interval * 1000

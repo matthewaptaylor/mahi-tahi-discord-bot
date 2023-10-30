@@ -1,14 +1,17 @@
 import { Guild } from 'discord.js';
 import { createRequire } from 'node:module';
 
-import { EventHandler } from './event-handler.js';
+import EventHandler from './EventHandler.js';
 import { EventDataService } from '../services/event-data-service.js';
 import { Logger } from '../services/logger.js';
 
 const require = createRequire(import.meta.url);
 let Logs = require('../../lang/logs.json');
 
-export class GuildJoinHandler implements EventHandler {
+/**
+ * Handle server join events.
+ */
+export default class GuildJoinHandler implements EventHandler {
     constructor(private eventDataService: EventDataService) {}
 
     public async process(guild: Guild): Promise<void> {
