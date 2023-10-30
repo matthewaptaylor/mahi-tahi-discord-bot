@@ -1,7 +1,7 @@
 /**
  * Time limits for Discord.
  */
-export class DiscordLimits {
+export default class DiscordLimits {
     public static readonly GUILDS_PER_SHARD = 2500;
     public static readonly CHANNELS_PER_GUILD = 500;
     public static readonly ROLES_PER_GUILD = 250;

@@ -1,20 +1,32 @@
+import { ShardingManager } from 'discord.js';
 import express, { Express } from 'express';
 import { createRequire } from 'node:module';
 import util from 'node:util';
 
-import { Controller } from '../controllers/controller.js';
-import { checkAuth } from '../middleware/check-auth.js';
-import { handleError } from '../middleware/handle-error.js';
+import Controller from './controllers/Controller.js';
+import GuildsController from './controllers/GuildsController.js';
+import RootController from './controllers/RootController.js';
+import ShardsController from './controllers/ShardsController.js';
+import { checkAuth } from './middleware/checkAuth.js';
+import { handleError } from './middleware/handleError.js';
 import { Logger } from '../services/logger.js';
 
 const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 let Logs = require('../../lang/logs.json');
 
-export class Api {
+export default class Api {
     private app: Express;
+    public controllers: Controller[];
 
-    constructor(public controllers: Controller[]) {
+    constructor(shardManager: ShardingManager) {
+        // Setup controllers
+        let guildsController = new GuildsController(shardManager);
+        let shardsController = new ShardsController(shardManager);
+        let rootController = new RootController();
+        this.controllers = [guildsController, shardsController, rootController];
+
+        // Setup express
         this.app = express();
         this.app.use(express.json());
         this.setupControllers();

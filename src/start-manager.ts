@@ -2,11 +2,8 @@ import { ShardingManager } from 'discord.js';
 import { createRequire } from 'node:module';
 import 'reflect-metadata';
 
-import { GuildsController } from './controllers/guilds-controller.js';
-import { RootController } from './controllers/root-controller.js';
-import { ShardsController } from './controllers/shards-controller.js';
+import Api from './api/Api.js';
 import { Job } from './jobs/job.js';
-import { Api } from './models/api.js';
 import { Manager } from './models/manager.js';
 import { HttpService } from './services/http-service.js';
 import { JobService } from './services/job-service.js';
@@ -71,10 +68,7 @@ async function start(): Promise<void> {
     let manager = new Manager(shardManager, new JobService(jobs));
 
     // API
-    let guildsController = new GuildsController(shardManager);
-    let shardsController = new ShardsController(shardManager);
-    let rootController = new RootController();
-    let api = new Api([guildsController, shardsController, rootController]);
+    let api = new Api(shardManager);
 
     // Start
     await manager.start();

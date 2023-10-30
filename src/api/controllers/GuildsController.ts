@@ -3,13 +3,13 @@ import { Request, Response, Router } from 'express';
 import router from 'express-promise-router';
 import { createRequire } from 'node:module';
 
-import { Controller } from './controller.js';
-import { GetGuildsResponse } from '../models/cluster-api/guilds.js';
+import Controller from './Controller.js';
+import { GetGuildsResponse } from '../../models/cluster-api/guilds.js';
 
 const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 
-export class GuildsController implements Controller {
+export default class GuildsController implements Controller {
     public path = '/guilds';
     public router: Router = router();
     public authToken: string = Config.api.secret;

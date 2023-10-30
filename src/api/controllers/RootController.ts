@@ -1,9 +1,9 @@
 import { Request, Response, Router } from 'express';
 import router from 'express-promise-router';
 
-import { Controller } from './controller.js';
+import Controller from './Controller.js';
 
-export class RootController implements Controller {
+export default class RootController implements Controller {
     public path = '/';
     public router: Router = router();
 

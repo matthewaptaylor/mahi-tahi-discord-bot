@@ -3,22 +3,22 @@ import { Request, Response, Router } from 'express';
 import router from 'express-promise-router';
 import { createRequire } from 'node:module';
 
-import { Controller } from './controller.js';
-import { CustomClient } from '../extensions/custom-client.js';
-import { mapClass } from '../middleware/map-class.js';
+import Controller from './Controller.js';
+import { CustomClient } from '../../extensions/custom-client.js';
 import {
     GetShardsResponse,
     SetShardPresencesRequest,
     ShardInfo,
     ShardStats,
-} from '../models/cluster-api/shards.js';
-import { Logger } from '../services/logger.js';
+} from '../../models/cluster-api/shards.js';
+import { Logger } from '../../services/logger.js';
+import { mapClass } from '../middleware/mapClass.js';
 
 const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 let Logs = require('../../lang/logs.json');
 
-export class ShardsController implements Controller {
+export default class ShardsController implements Controller {
     public path = '/shards';
     public router: Router = router();
     public authToken: string = Config.api.secret;
