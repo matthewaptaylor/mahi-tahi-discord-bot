@@ -22,8 +22,8 @@ import GuildJoinHandler from '../events/GuildJoinHandler.js';
 import GuildLeaveHandler from '../events/GuildLeaveHandler.js';
 import MessageHandler from '../events/MessageHandler.js';
 import ReactionHandler from '../events/ReactionHandler.js';
-import { JobService } from '../services/job-service.js';
-import { Logger } from '../services/logger.js';
+import JobService from '../services/JobService.js';
+import Logger from '../services/Logger.js';
 import { PartialUtils } from '../utils/partial-utils.js';
 
 const require = createRequire(import.meta.url);

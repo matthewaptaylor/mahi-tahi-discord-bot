@@ -4,7 +4,7 @@ import { createRequire } from 'node:module';
 
 import EventHandler from './EventHandler.js';
 import Reaction from '../reactions/Reaction.js';
-import { EventDataService } from '../services/event-data-service.js';
+import EventDataService from '../services/EventDataService.js';
 
 const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');

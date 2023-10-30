@@ -2,7 +2,7 @@ import { ChatInputCommandInteraction, EmbedBuilder, PermissionsString } from 'di
 
 import { Language } from '../../models/enum-helpers/language.js';
 import { EventData } from '../../models/internal-models.js';
-import { Lang } from '../../services/lang.js';
+import Lang from '../../services/Lang.js';
 import { ClientUtils } from '../../utils/client-utils.js';
 import { FormatUtils } from '../../utils/format-utils.js';
 import { InteractionUtils } from '../../utils/interaction-utils.js';

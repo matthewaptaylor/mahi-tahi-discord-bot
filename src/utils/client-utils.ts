@@ -17,7 +17,7 @@ import {
 
 import { PermissionUtils } from './permission-utils.js';
 import { RegexUtils } from './regex-utils.js';
-import { Lang } from '../services/lang.js';
+import Lang from '../services/Lang.js';
 
 const FETCH_MEMBER_LIMIT = 20;
 const IGNORED_ERRORS = [

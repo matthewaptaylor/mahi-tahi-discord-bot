@@ -13,9 +13,9 @@ import EventHandler from './EventHandler.js';
 import Command, { CommandDeferType } from '../commands/Command.js';
 import DiscordLimits from '../constants/DiscordLimits.js';
 import { EventData } from '../models/internal-models.js';
-import { EventDataService } from '../services/event-data-service.js';
-import { Lang } from '../services/lang.js';
-import { Logger } from '../services/logger.js';
+import EventDataService from '../services/EventDataService.js';
+import Lang from '../services/Lang.js';
+import Logger from '../services/Logger.js';
 import { CommandUtils } from '../utils/command-utils.js';
 import { InteractionUtils } from '../utils/interaction-utils.js';
 

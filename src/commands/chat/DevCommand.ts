@@ -5,7 +5,7 @@ import typescript from 'typescript';
 
 import { Language } from '../../models/enum-helpers/language.js';
 import { EventData } from '../../models/internal-models.js';
-import { Lang } from '../../services/lang.js';
+import Lang from '../../services/Lang.js';
 import { FormatUtils } from '../../utils/format-utils.js';
 import { InteractionUtils } from '../../utils/interaction-utils.js';
 import { ShardUtils } from '../../utils/shard-utils.js';

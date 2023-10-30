@@ -1,7 +1,7 @@
 import { ErrorRequestHandler } from 'express';
 import { createRequire } from 'node:module';
 
-import { Logger } from '../../services/logger.js';
+import Logger from '../../services/Logger.js';
 
 const require = createRequire(import.meta.url);
 let Logs = require('../../lang/logs.json');

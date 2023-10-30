@@ -20,11 +20,11 @@ import CustomClient from './extensions/CustomClient.js';
 import Job from './jobs/Job.js';
 import { Bot } from './models/bot.js';
 import Reaction from './reactions/Reaction.js';
-import { CommandRegistrationService } from './services/command-registration-service.js';
-import { EventDataService } from './services/event-data-service.js';
-import { JobService } from './services/job-service.js';
-import { Logger } from './services/logger.js';
-import { Trigger } from './triggers/Trigger.js';
+import CommandRegistrationService from './services/CommandRegistrationService.js';
+import EventDataService from './services/EventDataService.js';
+import JobService from './services/JobService.js';
+import Logger from './services/Logger.js';
+import Trigger from './triggers/Trigger.js';
 
 const require = createRequire(import.meta.url);
 let Config = require('../config/config.json');

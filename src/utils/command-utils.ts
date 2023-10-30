@@ -11,7 +11,7 @@ import { InteractionUtils } from './interaction-utils.js';
 import Command from '../commands/Command.js';
 import { Permission } from '../models/enum-helpers/permission.js';
 import { EventData } from '../models/internal-models.js';
-import { Lang } from '../services/lang.js';
+import Lang from '../services/Lang.js';
 
 export class CommandUtils {
     public static findCommand(commands: Command[], commandParts: string[]): Command {

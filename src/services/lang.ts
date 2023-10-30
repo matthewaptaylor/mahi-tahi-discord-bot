@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 import { Language } from '../models/enum-helpers/language.js';
 
-export class Lang {
+export default class Lang {
     private static linguini = new Linguini(
         path.resolve(dirname(fileURLToPath(import.meta.url)), '../../lang'),
         'lang'

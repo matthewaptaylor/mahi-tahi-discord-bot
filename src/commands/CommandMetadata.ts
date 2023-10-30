@@ -8,7 +8,7 @@ import {
 
 import Args from './Args.js';
 import { Language } from '../models/enum-helpers/language.js';
-import { Lang } from '../services/lang.js';
+import Lang from '../services/Lang.js';
 
 /**
  * Metadata describing the bot's commands.

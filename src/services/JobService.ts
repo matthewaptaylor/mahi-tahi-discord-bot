@@ -3,13 +3,13 @@ import { DateTime } from 'luxon';
 import schedule from 'node-schedule';
 import { createRequire } from 'node:module';
 
-import { Logger } from './logger.js';
+import Logger from './Logger.js';
 import Job from '../jobs/Job.js';
 
 const require = createRequire(import.meta.url);
 let Logs = require('../../lang/logs.json');
 
-export class JobService {
+export default class JobService {
     constructor(private jobs: Job[]) {}
 
     public start(): void {

@@ -8,13 +8,16 @@ import {
 } from 'discord.js';
 import { createRequire } from 'node:module';
 
-import { Logger } from './logger.js';
+import Logger from './Logger.js';
 
 const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 let Logs = require('../../lang/logs.json');
 
-export class CommandRegistrationService {
+/**
+ * Service for registering commands with Discord.
+ */
+export default class CommandRegistrationService {
     constructor(private rest: REST) {}
 
     public async process(

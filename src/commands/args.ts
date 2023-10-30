@@ -3,7 +3,7 @@ import { APIApplicationCommandBasicOption, ApplicationCommandOptionType } from '
 import { DevCommandName } from './chat/DevCommand.js';
 import { HelpOption } from './chat/HelpCommand.js';
 import { Language } from '../models/enum-helpers/language.js';
-import { Lang } from '../services/lang.js';
+import Lang from '../services/Lang.js';
 
 /**
  * Slash command argument declarations.

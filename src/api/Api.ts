@@ -9,12 +9,15 @@ import RootController from './controllers/RootController.js';
 import ShardsController from './controllers/ShardsController.js';
 import { checkAuth } from './middleware/checkAuth.js';
 import { handleError } from './middleware/handleError.js';
-import { Logger } from '../services/logger.js';
+import Logger from '../services/Logger.js';
 
 const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 let Logs = require('../../lang/logs.json');
 
+/**
+ * API tp manage clusters.
+ */
 export default class Api {
     private app: Express;
     public controllers: Controller[];

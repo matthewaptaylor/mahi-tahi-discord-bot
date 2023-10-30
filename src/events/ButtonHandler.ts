@@ -4,7 +4,7 @@ import { createRequire } from 'node:module';
 
 import EventHandler from './EventHandler.js';
 import { Button, ButtonDeferType } from '../buttons/index.js';
-import { EventDataService } from '../services/event-data-service.js';
+import EventDataService from '../services/EventDataService.js';
 import { InteractionUtils } from '../utils/interaction-utils.js';
 
 const require = createRequire(import.meta.url);

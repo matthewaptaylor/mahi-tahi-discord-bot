@@ -9,7 +9,10 @@ import {
 import { Language } from '../models/enum-helpers/language.js';
 import { EventData } from '../models/internal-models.js';
 
-export class EventDataService {
+/**
+ * Service for retrieving data to pass along in events.
+ */
+export default class EventDataService {
     public async create(
         options: {
             user?: User;

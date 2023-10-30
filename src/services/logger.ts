@@ -26,7 +26,7 @@ let logger = pino(
         : undefined
 );
 
-export class Logger {
+export default class Logger {
     private static shardId: number;
 
     public static info(message: string, obj?: any): void {

@@ -11,7 +11,7 @@ import {
     ShardInfo,
     ShardStats,
 } from '../../models/cluster-api/shards.js';
-import { Logger } from '../../services/logger.js';
+import Logger from '../../services/Logger.js';
 import { mapClass } from '../middleware/mapClass.js';
 
 const require = createRequire(import.meta.url);

@@ -5,10 +5,10 @@ import 'reflect-metadata';
 import Api from './api/Api.js';
 import Job from './jobs/Job.js';
 import { Manager } from './models/manager.js';
-import { HttpService } from './services/http-service.js';
-import { JobService } from './services/job-service.js';
-import { Logger } from './services/logger.js';
-import { MasterApiService } from './services/master-api-service.js';
+import HttpService from './services/HttpService.js';
+import JobService from './services/JobService.js';
+import Logger from './services/Logger.js';
+import MasterApiService from './services/MasterApiService.js';
 import { MathUtils } from './utils/math-utils.js';
 import { ShardUtils } from './utils/shard-utils.js';
 

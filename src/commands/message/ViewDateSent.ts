@@ -4,7 +4,7 @@ import { DateTime } from 'luxon';
 
 import { Language } from '../../models/enum-helpers/language.js';
 import { EventData } from '../../models/internal-models.js';
-import { Lang } from '../../services/lang.js';
+import Lang from '../../services/Lang.js';
 import { InteractionUtils } from '../../utils/interaction-utils.js';
 import Command, { CommandDeferType } from '../Command.js';
 

@@ -1,7 +1,7 @@
 import fetch, { Response } from 'node-fetch';
 import { URL } from 'node:url';
 
-export class HttpService {
+export default class HttpService {
     public async get(url: string | URL, authorization: string): Promise<Response> {
         return await fetch(url.toString(), {
             method: 'get',

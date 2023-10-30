@@ -1,7 +1,7 @@
 import { createRequire } from 'node:module';
 import { URL } from 'node:url';
 
-import { HttpService } from './http-service.js';
+import HttpService from './HttpService.js';
 import {
     LoginClusterResponse,
     RegisterClusterRequest,
@@ -11,7 +11,7 @@ import {
 const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 
-export class MasterApiService {
+export default class MasterApiService {
     private clusterId: string;
 
     constructor(private httpService: HttpService) {}
