@@ -6,14 +6,14 @@ import { Lang } from '../../services/lang.js';
 import { ClientUtils } from '../../utils/client-utils.js';
 import { FormatUtils } from '../../utils/format-utils.js';
 import { InteractionUtils } from '../../utils/interaction-utils.js';
-import { Command, CommandDeferType } from '../command.js';
+import Command, { CommandDeferType } from '../Command.js';
 
 export enum HelpOption {
     COMMANDS = 'COMMANDS',
     ABOUT = 'ABOUT',
 }
 
-export class HelpCommand implements Command {
+export default class HelpCommand implements Command {
     public names = [Lang.getRef('chatCommands.help', Language.Default)];
     public deferType = CommandDeferType.HIDDEN;
     public requireClientPerms: PermissionsString[] = [];

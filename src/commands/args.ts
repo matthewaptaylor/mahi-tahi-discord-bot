@@ -1,14 +1,14 @@
 import { APIApplicationCommandBasicOption, ApplicationCommandOptionType } from 'discord.js';
 
-import { DevCommandName } from './chat/dev-command.js';
-import { HelpOption } from './chat/help-command.js';
+import { DevCommandName } from './chat/DevCommand.js';
+import { HelpOption } from './chat/HelpCommand.js';
 import { Language } from '../models/enum-helpers/language.js';
 import { Lang } from '../services/lang.js';
 
 /**
  * Slash command argument declarations.
  */
-export class Args {
+export default class Args {
     /**
      * Option argument for the dev command.
      */

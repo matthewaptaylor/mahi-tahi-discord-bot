@@ -143,10 +143,10 @@
         "devOption": {
             "info": "Info -- Get info about the server environment."
         },
-        "userCommands": {
+        "userMenuCommands": {
             "viewDateJoined": "View Date Joined"
         },
-        "messageCommands": {
+        "messageMenuCommands": {
             "viewDateSent": "View Date Sent"
         },
 

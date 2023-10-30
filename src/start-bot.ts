@@ -3,16 +3,12 @@ import { Options, Partials } from 'discord.js';
 import { createRequire } from 'node:module';
 
 import { Button } from './buttons/index.js';
-import { DevCommand } from './commands/chat/dev-command.js';
-import { HelpCommand } from './commands/chat/help-command.js';
-import { Command } from './commands/command.js';
-import { ViewDateSent } from './commands/message/view-date-sent.js';
-import {
-    ChatCommandMetadata,
-    MessageCommandMetadata,
-    UserCommandMetadata,
-} from './commands/metadata.js';
-import { ViewDateJoined } from './commands/user/view-date-joined.js';
+import DevCommand from './commands/chat/DevCommand.js';
+import HelpCommand from './commands/chat/HelpCommand.js';
+import Command from './commands/Command.js';
+import CommandMetadata from './commands/CommandMetadata.js';
+import ViewDateSent from './commands/messageMenu/ViewDateSent.js';
+import ViewDateJoined from './commands/userMenu/ViewDateJoined.js';
 import { ButtonHandler } from './events/button-handler.js';
 import { CommandHandler } from './events/command-handler.js';
 import { GuildJoinHandler } from './events/guild-join-handler.js';
@@ -113,9 +109,15 @@ async function start(): Promise<void> {
             let rest = new REST({ version: '10' }).setToken(Config.client.token);
             let commandRegistrationService = new CommandRegistrationService(rest);
             let localCmds = [
-                ...Object.values(ChatCommandMetadata).sort((a, b) => (a.name > b.name ? 1 : -1)),
-                ...Object.values(MessageCommandMetadata).sort((a, b) => (a.name > b.name ? 1 : -1)),
-                ...Object.values(UserCommandMetadata).sort((a, b) => (a.name > b.name ? 1 : -1)),
+                ...Object.values(CommandMetadata.ChatCommands).sort((a, b) =>
+                    a.name > b.name ? 1 : -1
+                ),
+                ...Object.values(CommandMetadata.MessageMenuCommands).sort((a, b) =>
+                    a.name > b.name ? 1 : -1
+                ),
+                ...Object.values(CommandMetadata.UserMenuCommands).sort((a, b) =>
+                    a.name > b.name ? 1 : -1
+                ),
             ];
             await commandRegistrationService.process(localCmds, process.argv);
         } catch (error) {

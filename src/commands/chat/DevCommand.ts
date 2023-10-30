@@ -9,7 +9,7 @@ import { Lang } from '../../services/lang.js';
 import { FormatUtils } from '../../utils/format-utils.js';
 import { InteractionUtils } from '../../utils/interaction-utils.js';
 import { ShardUtils } from '../../utils/shard-utils.js';
-import { Command, CommandDeferType } from '../command.js';
+import Command, { CommandDeferType } from '../Command.js';
 
 const require = createRequire(import.meta.url);
 let Config = require('../../../config/config.json');
@@ -19,10 +19,14 @@ export enum DevCommandName {
     INFO = 'INFO',
 }
 
-export class DevCommand implements Command {
+/**
+ * A chat slash command that provides information about the bot.
+ */
+export default class DevCommand implements Command {
     public names = [Lang.getRef('chatCommands.dev', Language.Default)];
     public deferType = CommandDeferType.HIDDEN;
     public requireClientPerms: PermissionsString[] = [];
+
     public async execute(intr: ChatInputCommandInteraction, data: EventData): Promise<void> {
         if (!Config.developers.includes(intr.user.id)) {
             await InteractionUtils.send(intr, Lang.getEmbed('validationEmbeds.devOnly', data.lang));
@@ -30,13 +34,14 @@ export class DevCommand implements Command {
         }
 
         let args = {
-            command: intr.options.getString(
+            option: intr.options.getString(
                 Lang.getRef('arguments.devOption', Language.Default)
             ) as DevCommandName,
         };
 
-        switch (args.command) {
+        switch (args.option) {
             case DevCommandName.INFO: {
+                // Option argument is info, show info about the server environment
                 let shardCount = intr.client.shard?.count ?? 1;
                 let serverCount: number;
                 if (intr.client.shard) {

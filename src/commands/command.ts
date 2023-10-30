@@ -9,7 +9,10 @@ import { RateLimiter } from 'discord.js-rate-limiter';
 
 import { EventData } from '../models/internal-models.js';
 
-export interface Command {
+/**
+ * Any type of command.
+ */
+export default interface Command {
     names: string[];
     cooldown?: RateLimiter;
     deferType: CommandDeferType;

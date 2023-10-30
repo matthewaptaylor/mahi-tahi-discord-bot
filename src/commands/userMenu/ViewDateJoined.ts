@@ -6,10 +6,13 @@ import { Language } from '../../models/enum-helpers/language.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/lang.js';
 import { InteractionUtils } from '../../utils/interaction-utils.js';
-import { Command, CommandDeferType } from '../command.js';
+import Command, { CommandDeferType } from '../Command.js';
 
-export class ViewDateJoined implements Command {
-    public names = [Lang.getRef('userCommands.viewDateJoined', Language.Default)];
+/**
+ * A user context menu item that displays the date the user joined the server.
+ */
+export default class ViewDateJoined implements Command {
+    public names = [Lang.getRef('userMenuCommands.viewDateJoined', Language.Default)];
     public cooldown = new RateLimiter(1, 5000);
     public deferType = CommandDeferType.HIDDEN;
     public requireClientPerms: PermissionsString[] = [];

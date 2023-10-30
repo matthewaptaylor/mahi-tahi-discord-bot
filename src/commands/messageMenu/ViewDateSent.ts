@@ -6,10 +6,13 @@ import { Language } from '../../models/enum-helpers/language.js';
 import { EventData } from '../../models/internal-models.js';
 import { Lang } from '../../services/lang.js';
 import { InteractionUtils } from '../../utils/interaction-utils.js';
-import { Command, CommandDeferType } from '../command.js';
+import Command, { CommandDeferType } from '../Command.js';
 
-export class ViewDateSent implements Command {
-    public names = [Lang.getRef('messageCommands.viewDateSent', Language.Default)];
+/**
+ * A message context menu item that displays the date the message was sent.
+ */
+export default class ViewDateSent implements Command {
+    public names = [Lang.getRef('messageMenuCommands.viewDateSent', Language.Default)];
     public cooldown = new RateLimiter(1, 5000);
     public deferType = CommandDeferType.HIDDEN;
     public requireClientPerms: PermissionsString[] = [];
