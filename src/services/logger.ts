@@ -30,8 +30,6 @@ let logger = pino(
  * Service for logging.
  */
 export default class Logger {
-    private static shardId: number;
-
     public static info(message: string, obj?: any): void {
         obj ? logger.info(obj, message) : logger.info(message);
     }
@@ -83,13 +81,6 @@ export default class Logger {
                 .error(message);
         } else {
             logger.error(obj, message);
-        }
-    }
-
-    public static setShardId(shardId: number): void {
-        if (this.shardId !== shardId) {
-            this.shardId = shardId;
-            logger = logger.child({ shardId });
         }
     }
 }

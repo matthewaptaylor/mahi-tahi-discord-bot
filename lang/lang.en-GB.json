@@ -29,7 +29,6 @@
                         "name": "IDs",
                         "value": [
                             "**Hostname**: {{HOSTNAME}}",
-                            "**Shard ID**: {{SHARD_ID}}",
                             "**Server ID**: {{SERVER_ID}}",
                             "**Bot ID**: {{BOT_ID}}",
                             "**User ID**: {{USER_ID}}"
@@ -91,10 +90,6 @@
                     {
                         "name": "Server ID",
                         "value": "{{GUILD_ID}}"
-                    },
-                    {
-                        "name": "Shard ID",
-                        "value": "{{SHARD_ID}}"
                     }
                 ],
                 "color": "{{COM:colors.error}}"

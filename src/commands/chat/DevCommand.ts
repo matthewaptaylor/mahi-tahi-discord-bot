@@ -69,7 +69,6 @@ export default class DevCommand implements Command {
                                 ? FormatUtils.fileSize(memory.heapUsed / serverCount)
                                 : Lang.getRef('other.na', data.lang),
                         HOSTNAME: os.hostname(),
-                        SHARD_ID: (intr.guild?.shardId ?? 0).toString(),
                         SERVER_ID: intr.guild?.id ?? Lang.getRef('other.na', data.lang),
                         BOT_ID: intr.client.user?.id,
                         USER_ID: intr.user.id,
