@@ -4,7 +4,7 @@ import router from 'express-promise-router';
 import { createRequire } from 'node:module';
 
 import Controller from './Controller.js';
-import { CustomClient } from '../../extensions/custom-client.js';
+import CustomClient from '../../extensions/CustomClient.js';
 import {
     GetShardsResponse,
     SetShardPresencesRequest,
@@ -18,6 +18,9 @@ const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 let Logs = require('../../lang/logs.json');
 
+/**
+ * API controller for shard management.
+ */
 export default class ShardsController implements Controller {
     public path = '/shards';
     public router: Router = router();

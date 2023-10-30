@@ -3,6 +3,9 @@ import router from 'express-promise-router';
 
 import Controller from './Controller.js';
 
+/**
+ * API controller for root.
+ */
 export default class RootController implements Controller {
     public path = '/';
     public router: Router = router();

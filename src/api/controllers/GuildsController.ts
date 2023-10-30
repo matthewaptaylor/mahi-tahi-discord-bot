@@ -9,6 +9,9 @@ import { GetGuildsResponse } from '../../models/cluster-api/guilds.js';
 const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
 
+/**
+ * API controller for guild management.
+ */
 export default class GuildsController implements Controller {
     public path = '/guilds';
     public router: Router = router();

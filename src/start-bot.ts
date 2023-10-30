@@ -16,15 +16,15 @@ import GuildLeaveHandler from './events/GuildLeaveHandler.js';
 import MessageHandler from './events/MessageHandler.js';
 import ReactionHandler from './events/ReactionHandler.js';
 import TriggerHandler from './events/TriggerHandler.js';
-import { CustomClient } from './extensions/custom-client.js';
-import { Job } from './jobs/job.js';
+import CustomClient from './extensions/CustomClient.js';
+import Job from './jobs/Job.js';
 import { Bot } from './models/bot.js';
 import Reaction from './reactions/Reaction.js';
 import { CommandRegistrationService } from './services/command-registration-service.js';
 import { EventDataService } from './services/event-data-service.js';
 import { JobService } from './services/job-service.js';
 import { Logger } from './services/logger.js';
-import { Trigger } from './triggers/index.js';
+import { Trigger } from './triggers/Trigger.js';
 
 const require = createRequire(import.meta.url);
 let Config = require('../config/config.json');

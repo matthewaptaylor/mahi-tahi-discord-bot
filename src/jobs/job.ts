@@ -1,4 +1,4 @@
-export abstract class Job {
+export default abstract class Job {
     abstract name: string;
     abstract log: boolean;
     abstract schedule: string;

@@ -4,7 +4,7 @@ import schedule from 'node-schedule';
 import { createRequire } from 'node:module';
 
 import { Logger } from './logger.js';
-import { Job } from '../jobs/job.js';
+import Job from '../jobs/Job.js';
 
 const require = createRequire(import.meta.url);
 let Logs = require('../../lang/logs.json');

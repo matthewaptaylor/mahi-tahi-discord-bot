@@ -3,7 +3,7 @@ import { createRequire } from 'node:module';
 import 'reflect-metadata';
 
 import Api from './api/Api.js';
-import { Job } from './jobs/job.js';
+import Job from './jobs/Job.js';
 import { Manager } from './models/manager.js';
 import { HttpService } from './services/http-service.js';
 import { JobService } from './services/job-service.js';

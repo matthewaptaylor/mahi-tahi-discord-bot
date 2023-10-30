@@ -3,7 +3,7 @@ import { RateLimiter } from 'discord.js-rate-limiter';
 import { createRequire } from 'node:module';
 
 import { EventDataService } from '../services/event-data-service.js';
-import { Trigger } from '../triggers/index.js';
+import { Trigger } from '../triggers/Trigger.js';
 
 const require = createRequire(import.meta.url);
 let Config = require('../../config/config.json');
