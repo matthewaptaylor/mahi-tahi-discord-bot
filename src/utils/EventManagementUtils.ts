@@ -1,11 +1,10 @@
-import { AnyThreadChannel, ChannelType, EmbedBuilder, FetchedThreads } from 'discord.js';
+import { AnyThreadChannel, ChannelType, Client, EmbedBuilder, FetchedThreads } from 'discord.js';
 import { decode } from 'html-entities';
 import { GetMyProgrammeReturnValue } from 'mahi-tahi-api';
 import { createRequire } from 'node:module';
 
 import DateUtils from './DateUtils.js';
 import MahiTahiUtils from './MahiTahiUtils.js';
-import CustomClient from '../extensions/CustomClient.js';
 import Language from '../models/enumHelpers/Language.js';
 import Lang from '../services/Lang.js';
 
@@ -41,7 +40,7 @@ export default class EventManagementUtils {
      * @param events Events to create channels from.
      */
     public static async createEventPlanningThreads(
-        client: CustomClient,
+        client: Client,
         events: GetMyProgrammeReturnValue['returnValue']
     ): Promise<void> {
         // Get upcoming events

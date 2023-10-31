@@ -5,6 +5,7 @@ import { createRequire } from 'node:module';
 import Button from './buttons/Button.js';
 import DevCommand from './commands/chat/DevCommand.js';
 import HelpCommand from './commands/chat/HelpCommand.js';
+import ReloadCommand from './commands/chat/ReloadCommand.js';
 import Command from './commands/Command.js';
 import CommandMetadata from './commands/CommandMetadata.js';
 import ViewDateSent from './commands/message/ViewDateSent.js';
@@ -54,6 +55,7 @@ async function start(): Promise<void> {
         // Chat Commands
         new DevCommand(),
         new HelpCommand(),
+        new ReloadCommand(),
 
         // Message context menu commands
         new ViewDateSent(),
@@ -130,9 +132,6 @@ async function start(): Promise<void> {
     }
 
     await bot.start();
-
-    const job = new UpdateEventPlanningForum(client);
-    job.run();
 }
 
 process.on('unhandledRejection', (reason, _promise) => {

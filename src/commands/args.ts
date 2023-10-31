@@ -2,6 +2,7 @@ import { APIApplicationCommandBasicOption, ApplicationCommandOptionType } from '
 
 import { DevCommandName } from './chat/DevCommand.js';
 import { HelpOption } from './chat/HelpCommand.js';
+import { ReloadOption } from './chat/ReloadCommand.js';
 import Language from '../models/enumHelpers/Language.js';
 import Lang from '../services/Lang.js';
 
@@ -46,6 +47,24 @@ export default class Args {
                 name: Lang.getRef('helpOption.about', Language.Default),
                 name_localizations: Lang.getRefLocalizationMap('helpOption.about'),
                 value: HelpOption.ABOUT,
+            },
+        ],
+    };
+
+    /**
+     * Option argument for the help command.
+     */
+    public static readonly RELOAD_OPTION: APIApplicationCommandBasicOption = {
+        name: Lang.getRef('arguments.reloadOption', Language.Default),
+        name_localizations: Lang.getRefLocalizationMap('arguments.reloadOption'),
+        description: Lang.getRef('argDescs.reloadOption', Language.Default),
+        description_localizations: Lang.getRefLocalizationMap('argDescs.reloadOption'),
+        type: ApplicationCommandOptionType.String,
+        choices: [
+            {
+                name: Lang.getRef('reloadOption.forum', Language.Default),
+                name_localizations: Lang.getRefLocalizationMap('reloadOption.forum'),
+                value: ReloadOption.FORUM,
             },
         ],
     };

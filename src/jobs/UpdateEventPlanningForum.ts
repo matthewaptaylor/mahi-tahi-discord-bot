@@ -1,9 +1,8 @@
-import { ChannelType } from 'discord.js';
+import { ChannelType, Client } from 'discord.js';
 import { login } from 'mahi-tahi-api';
 import { createRequire } from 'node:module';
 
 import Job from './Job.js';
-import CustomClient from '../extensions/CustomClient.js';
 import DateUtils from '../utils/DateUtils.js';
 import EventManagementUtils from '../utils/EventManagementUtils.js';
 import MahiTahiUtils from '../utils/MahiTahiUtils.js';
@@ -21,7 +20,7 @@ export default class UpdateEventPlanningForum extends Job {
     public initialDelaySecs: number = Config.jobs.UpdateEventPlanningForum.initialDelaySecs;
     public postDaysBeforeEvent: number = Config.jobs.UpdateEventPlanningForum.postDaysBeforeEvent;
 
-    constructor(private client: CustomClient) {
+    constructor(private client: Client) {
         super();
     }
 

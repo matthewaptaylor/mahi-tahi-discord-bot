@@ -19,6 +19,9 @@
                 "description": "{{REF:bot.description}}",
                 "fields": [{ "name": "Author", "value": "{{REF:links.authorEmbed}}" }]
             },
+            "reloadForum": {
+                "description": "Forum threads reloaded from Mahi Tahi."
+            },
             "devInfo": {
                 "title": "{{COM:bot.name}} - Developer Info",
                 "fields": [
@@ -139,24 +142,31 @@
         },
 
         "chatCommands": {
-            "dev": "dev",
-            "help": "help"
+            "help": "help",
+            "reload": "reload",
+            "dev": "dev"
         },
         "commandDescs": {
             "help": "Find help.",
+            "reload": "Fetch data from Mahi Tahi and update something. Note this is automatically scheduled.",
             "dev": "Developer use only."
         },
         "arguments": {
             "helpOption": "option",
+            "reloadOption": "option",
             "devOption": "option"
         },
         "argDescs": {
             "helpOption": "Option.",
-            "devOption": "Command."
+            "reloadOption": "What update once the data is reloaded.",
+            "devOption": "Option."
         },
         "helpOption": {
             "commands": "Commands -- What commands are there?",
             "about": "About -- Tell me about this bot."
+        },
+        "reloadOption": {
+            "forum": "Forum -- The event planning forum."
         },
         "devOption": {
             "info": "Info -- Get info about the server environment."

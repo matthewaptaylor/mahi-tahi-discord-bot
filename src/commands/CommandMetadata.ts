@@ -53,6 +53,22 @@ export default class CommandMetadata {
                 },
             ],
         },
+
+        RELOAD: {
+            type: ApplicationCommandType.ChatInput,
+            name: Lang.getRef('chatCommands.reload', Language.Default),
+            name_localizations: Lang.getRefLocalizationMap('chatCommands.help'),
+            description: Lang.getRef('commandDescs.reload', Language.Default),
+            description_localizations: Lang.getRefLocalizationMap('commandDescs.reload'),
+            dm_permission: true,
+            default_member_permissions: undefined,
+            options: [
+                {
+                    ...Args.RELOAD_OPTION,
+                    required: true,
+                },
+            ],
+        },
     };
 
     /**
