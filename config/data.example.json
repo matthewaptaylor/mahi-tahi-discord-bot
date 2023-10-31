@@ -1,0 +1,12 @@
+{
+    "mahiTahiCredentials": {
+        "username": "<username>",
+        "password": "<password>"
+    },
+    "mahiTahiGroup": "<groupId>",
+    "serverChannels": {
+        "planningForum": "<channelId>",
+        "thisWeekChannel": "<channelId>",
+        "logChannel": "<channelId>"
+    }
+}

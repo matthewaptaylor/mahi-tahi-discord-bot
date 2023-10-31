@@ -1,6 +1,24 @@
 {
     "data": {
         "displayEmbeds": {
+            "helpCommands": {
+                "title": "Help - {{REF:helpOptions.commands}}",
+                "fields": [
+                    {
+                        "name": "Commands",
+                        "value": [
+                            "To see the available commands, just type `/` and select the bot from the left side. You can then scroll through all available commands. Some commands may be hidden if you don't have permission to view them.",
+                            "",
+                            "{{CMD_LINK_HELP}} - {{REF:commandDescs.help}}"
+                        ]
+                    }
+                ]
+            },
+            "about": {
+                "title": "{{COM:bot.name}} - About",
+                "description": "{{REF:bot.description}}",
+                "fields": [{ "name": "Author", "value": "{{REF:links.authorEmbed}}" }]
+            },
             "devInfo": {
                 "title": "{{COM:bot.name}} - Developer Info",
                 "fields": [
@@ -36,29 +54,33 @@
                     }
                 ]
             },
-            "helpCommands": {
-                "title": "Help - {{REF:helpOptions.commands}}",
-                "fields": [
-                    {
-                        "name": "Commands",
-                        "value": [
-                            "To see the available commands, just type `/` and select the bot from the left side. You can then scroll through all available commands. Some commands may be hidden if you don't have permission to view them.",
-                            "",
-                            "{{CMD_LINK_HELP}} - {{REF:commandDescs.help}}"
-                        ]
-                    }
-                ]
-            },
-            "about": {
-                "title": "{{COM:bot.name}} - About",
-                "description": "{{REF:bot.description}}",
-                "fields": [{ "name": "Author", "value": "{{REF:links.authorEmbed}}" }]
-            },
             "viewDateJoined": {
                 "description": "{{TARGET}} joined on {{DATE}}!"
             },
             "viewDateSent": {
                 "description": "This message was sent on {{DATE}}!"
+            },
+            "nextWeek": {
+                "title": "{{NAME}}",
+                "url": "{{URL}}",
+                "description": "{{DESCRIPTION}}",
+                "thumbnail": "{{ICON}}",
+                "fields": [
+                    {
+                        "name": "Where",
+                        "value": ["{{LOCATION}}"]
+                    },
+                    {
+                        "name": "Starts",
+                        "value": ["{{START}}"],
+                        "inline": true
+                    },
+                    {
+                        "name": "Ends",
+                        "value": ["{{END}}"],
+                        "inline": true
+                    }
+                ]
             }
         },
         "validationEmbeds": {

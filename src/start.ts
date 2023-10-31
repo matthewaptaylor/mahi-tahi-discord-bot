@@ -18,6 +18,7 @@ import ReactionHandler from './events/ReactionHandler.js';
 import TriggerHandler from './events/TriggerHandler.js';
 import CustomClient from './extensions/CustomClient.js';
 import Job from './jobs/Job.js';
+import UpdateEventPlanningForum from './jobs/UpdateEventPlanningForum.js';
 import Bot from './models/Bot.js';
 import Reaction from './reactions/Reaction.js';
 import CommandRegistrationService from './services/CommandRegistrationService.js';
@@ -37,7 +38,9 @@ async function start(): Promise<void> {
     // Client
     let client = new CustomClient({
         intents: Config.client.intents,
-        partials: (Config.client.partials as string[]).map(partial => Partials[partial]),
+        partials: (Config.client.partials as string[]).map(
+            partial => Partials[partial as keyof typeof Partials]
+        ),
         makeCache: Options.cacheWithLimits({
             // Keep default caching behavior
             ...Options.DefaultMakeCacheSettings,
@@ -86,9 +89,7 @@ async function start(): Promise<void> {
     let reactionHandler = new ReactionHandler(reactions, eventDataService);
 
     // Jobs
-    let jobs: Job[] = [
-        // TODO: Add new jobs here
-    ];
+    let jobs: Job[] = [new UpdateEventPlanningForum(client)];
 
     // Bot
     let bot = new Bot(

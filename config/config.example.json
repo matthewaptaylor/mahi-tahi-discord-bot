@@ -29,10 +29,11 @@
     },
     "jobs": {
         "updateServerCount": {
-            "schedule": "0 */10 * * * *",
+            "schedule": "0 0 9 * * *",
             "log": false,
             "runOnce": false,
-            "initialDelaySecs": 0
+            "initialDelaySecs": 0,
+            "postDaysBeforeEvent": 3
         }
     },
     "rateLimiting": {
