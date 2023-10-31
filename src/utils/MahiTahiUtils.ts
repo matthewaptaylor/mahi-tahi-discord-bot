@@ -89,6 +89,23 @@ export default class MahiTahiUtils {
         return foundEvents;
     }
 
+    public static filterEventsByRange(
+        events: GetMyProgrammeReturnValue['returnValue'],
+        from: Date | undefined,
+        to: Date | undefined
+    ): GetMyProgrammeReturnValue['returnValue'] {
+        const foundEvents: GetMyProgrammeReturnValue['returnValue'] = [];
+        events.forEach(event => {
+            if (
+                (!from || new Date(event.Event__r.Start_Date__c) >= from) &&
+                (!to || new Date(event.Event__r.Start_Date__c) <= to)
+            )
+                foundEvents.push(event);
+        });
+
+        return foundEvents;
+    }
+
     public static createTermString(term: number, year: number): `Term ${number} ${number}` {
         return `Term ${term} ${year}`;
     }

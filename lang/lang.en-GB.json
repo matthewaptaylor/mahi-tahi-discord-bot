@@ -130,6 +130,10 @@
         }
     },
     "refs": {
+        "displayMessages": {
+            "eventPlanningForum": "You can use this thread for planning {{NAME}}."
+        },
+
         "bot": {
             "description": "A Discord bot which interacts with Scouts Aotearoa's online system."
         },

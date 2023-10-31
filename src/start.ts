@@ -130,6 +130,9 @@ async function start(): Promise<void> {
     }
 
     await bot.start();
+
+    const job = new UpdateEventPlanningForum(client);
+    job.run();
 }
 
 process.on('unhandledRejection', (reason, _promise) => {

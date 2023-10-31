@@ -1,13 +1,11 @@
 import { ChannelType } from 'discord.js';
-import { decode } from 'html-entities';
 import { login } from 'mahi-tahi-api';
 import { createRequire } from 'node:module';
 
 import Job from './Job.js';
 import CustomClient from '../extensions/CustomClient.js';
-import Language from '../models/enumHelpers/Language.js';
-import Lang from '../services/Lang.js';
 import DateUtils from '../utils/DateUtils.js';
+import EventManagementUtils from '../utils/EventManagementUtils.js';
 import MahiTahiUtils from '../utils/MahiTahiUtils.js';
 import MessageUtils from '../utils/MessageUtils.js';
 
@@ -58,24 +56,10 @@ export default class UpdateEventPlanningForum extends Job {
         );
         if (thisWeekChannel.type === ChannelType.GuildText) {
             eventsInXDays.forEach(event => {
-                MessageUtils.send(
-                    thisWeekChannel,
-                    Lang.getEmbed('displayEmbeds.nextWeek', Language.Default, {
-                        NAME: event.Event_Name__c,
-                        URL: `https://mahitahi.scouts.nz/s/event/${event.Event__c}`,
-                        DESCRIPTION: decode(event.Event__r.Rich_Description__c),
-                        ICON: event.Event__r.Event_Icon__c,
-                        LOCATION:
-                            event.Event__r.Venue_Display_Text__c ??
-                            event.Event__r.None_Standard_Venue__c ??
-                            'TBC',
-                        START: DateUtils.format(event.Event__r.Start_Date__c),
-                        END: DateUtils.format(event.Event__r.End_Date__c),
-                    })
-                );
+                MessageUtils.send(thisWeekChannel, EventManagementUtils.createEventEmbed(event));
             });
         }
 
-        console.log(JSON.stringify(eventsInXDays));
+        await EventManagementUtils.createEventPlanningThreads(this.client, eventsInYear);
     }
 }
